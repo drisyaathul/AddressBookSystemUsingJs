@@ -111,6 +111,14 @@ class Contact {
         return (`First Name: ${this.firstName} \nLast Name: ${this.lastName}\nAddress: ${this.address}\nCity : ${this.city}\nState : ${this.state}\nZip code : ${this.zip}\nPhone Number : ${this.phoneNumber}\nEmail ID: ${this.email}`)
       }
 }
-
-let myContact = new Contact('Drisya', 'Athul', 'Bukit', 'KualaLumpur', 'Malaysia', '123456', '9199999999', 'drisya@gmail.com');
+//UC3:
+let addressBookArray = new Array();
+let myContact = new Contact('Drisya', 'Athul', 'Bukit', 'KualaLumpur', 'Malaysia', '123456', '9999999999', 'drisya@gmail.com');
+addressBookArray.push(myContact);
+let contact1 = new Contact('Varsha', 'Stanil', 'Tirur', 'Calicut', 'Kerala', '789456', '9888888888', 'varsha@gmail.com');
+addressBookArray.push(contact1);
+let contact2 = new Contact('Kavya', 'Vasu', 'Narayanapura', 'Bangalore', 'karnataka', '147852', '8888899999', 'kavya@gmail.com');
+addressBookArray.push(contact1);
 console.log(myContact.toString());
+console.log(contact1.toString());
+console.log(contact2.toString());
