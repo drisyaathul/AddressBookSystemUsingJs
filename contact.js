@@ -230,3 +230,21 @@ let count2 = addressBookArray.reduce((counter,person) =>{
     return counter;
 },0);
 console.log(count2);
+
+//UC11:SortByNameAlphabetically
+
+//UC12:Sort by City
+let cityName = prompt("Enter city name to sort");
+let sortCity = addressBookArray.sort((a,b)=> {
+    if (a.city<b.city) {
+        return -1;
+    }
+    if(a.city>b.city){
+        return 1;
+      }
+      return 0;
+});
+    console.log("Printing SortbyCity list")
+    console.log(sortCity.toString())
+  
+
