@@ -170,4 +170,28 @@ const count = addressBookArray.reduce((count, contacts) => {
 },0);
 console.log("Number of Contacts :" +count);
 
-  
+//UC7:
+let fname = prompt("Enter new first name");
+let stats = addressBookArray.reduce((status1,person) =>{
+    if(person._firstName===fname) status1="true"
+    return status1;
+});
+
+if(stats==="true"){
+    fname = prompt("Duplicate Entry not allowed try another name");
+}
+
+
+let lname = prompt("Enter new last name");
+let address1 = prompt("Enter new address name");
+let city1 = prompt("Enter new city name");
+let state1 = prompt("Enter new state name");
+let zip1 = prompt("Enter new zip name");
+let phoneNumber1 = prompt("Enter new Phone Number");
+let email1 = prompt("Enter new emil");
+
+//To make person class object
+const contact3 = new Contact(fname,lname,address1,city1,state1,zip1,phoneNumber1,email1);
+
+addressBookArray.push(contact3);
+console.log(contact3.toString());
