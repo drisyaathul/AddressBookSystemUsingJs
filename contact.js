@@ -118,7 +118,35 @@ addressBookArray.push(myContact);
 let contact1 = new Contact('Varsha', 'Stanil', 'Tirur', 'Calicut', 'Kerala', '789456', '9888888888', 'varsha@gmail.com');
 addressBookArray.push(contact1);
 let contact2 = new Contact('Kavya', 'Vasu', 'Narayanapura', 'Bangalore', 'karnataka', '147852', '8888899999', 'kavya@gmail.com');
-addressBookArray.push(contact1);
+addressBookArray.push(contact2);
 console.log(myContact.toString());
 console.log(contact1.toString());
 console.log(contact2.toString());
+
+//UC4:
+let firstname = prompt("Enter name to find person");
+
+for (let person of addressBookArray) {
+    if (person._firstName === firstname) {
+        console.log("Person found");
+        let fname = prompt("Enter new first name");
+        person._firstName=fname;
+        let lname = prompt("Enter new last name");
+        person._lastName = lname;
+        let address1 = prompt("Enter new address");
+        person._address= address1;
+        let city1 = prompt("Enter new city");
+        person._city = city1;
+        let state1 = prompt("Enter new state");
+        person._state = state1;
+        let zip1 = prompt("Enter new zip");
+        person._zip = zip1;
+        let phoneNumber1 = prompt("Enter new Phone Number");
+        person._phoneNumber = phoneNumber1;
+        let email1 = prompt("Enter new Email");
+        person._email = email1;
+        console.log("Contact Updated Successfully");
+    }
+}
+console.log(addressBookArray.toString());
+  
