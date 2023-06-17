@@ -170,7 +170,7 @@ const count = addressBookArray.reduce((count, contacts) => {
 },0);
 console.log("Number of Contacts :" +count);
 
-//UC7:
+//UC7:No Duplicate Entry Of Same Person
 let fname = prompt("Enter new first name");
 let stats = addressBookArray.reduce((status1,person) =>{
     if(person._firstName===fname) status1="true"
@@ -178,20 +178,39 @@ let stats = addressBookArray.reduce((status1,person) =>{
 });
 
 if(stats==="true"){
-    fname = prompt("Duplicate Entry not allowed try another name");
+    fname = prompt("Duplicate Entry is not allowed!! Try another Name");
 }
 
-
 let lname = prompt("Enter new last name");
-let address1 = prompt("Enter new address name");
-let city1 = prompt("Enter new city name");
-let state1 = prompt("Enter new state name");
-let zip1 = prompt("Enter new zip name");
+let address1 = prompt("Enter new address");
+let city1 = prompt("Enter new city");
+let state1 = prompt("Enter new state");
+let zip1 = prompt("Enter new zip");
 let phoneNumber1 = prompt("Enter new Phone Number");
-let email1 = prompt("Enter new emil");
-
+let email1 = prompt("Enter new email");
 //To make person class object
 const contact3 = new Contact(fname,lname,address1,city1,state1,zip1,phoneNumber1,email1);
-
 addressBookArray.push(contact3);
 console.log(contact3.toString());
+
+//UC8: Search Person In a Particular City Or State
+
+let findCity = prompt("Enter city to find contact");
+//To print all contact of that city
+addressBookArray.filter((person) =>{
+    if(person._city===findCity){
+        console.log("First Name "+person._firstName+" "+"Last Name "+person._lastName+" "+" Address "+person._address+" "+
+        "City "+person._city+" State "+person._state+" Zip "+person._zip+"  PhoneNumber  "+person._phoneNumber+" Email  "+
+        person._email);
+    }
+});
+//To take user input state name
+let findState = prompt("Enter state to find contact");
+//To print all contact of that state
+addressBookArray.filter((person) =>{
+    if(person._state===findState){
+        console.log("First Name "+person._firstName+" "+"Last Name "+person._lastName+" "+" Address "+person._address+" "+
+        "City "+person._city+" State "+person._state+" Zip "+person._zip+"  PhoneNumber  "+person._phoneNumber+" Email  "+
+        person._email);
+    }
+});
