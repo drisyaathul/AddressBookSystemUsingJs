@@ -214,3 +214,19 @@ addressBookArray.filter((person) =>{
         person._email);
     }
 });
+
+//UC10:Count by City
+let city = prompt("Enter city to find Count");
+let count1  = addressBookArray.reduce((counter,person) =>{
+    if(person._city===city)  counter+=1
+    return counter;
+},0);
+console.log(count1);
+
+//Count by State
+let state = prompt("Enter state to find Count");
+let count2 = addressBookArray.reduce((counter,person) =>{
+    if(person._state===state) counter+=1
+    return counter;
+},0);
+console.log(count2);
