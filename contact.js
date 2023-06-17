@@ -123,7 +123,7 @@ console.log(myContact.toString());
 console.log(contact1.toString());
 console.log(contact2.toString());
 
-//UC4:
+//UC4:Edit
 let firstname = prompt("Enter name to find person");
 
 for (let person of addressBookArray) {
@@ -149,4 +149,19 @@ for (let person of addressBookArray) {
     }
 }
 console.log(addressBookArray.toString());
+
+//UC5:Delete
+addressBookArray.delete=function(name){
+    for(let i =0;i<addressBookArray.length;i++){
+      if(addressBookArray[i]._firstName==name){
+        console.log("Contact found!!!")
+        addressBookArray.splice(i,1); 
+        /// 1 is use to specify how much element you want to remove if 1 then 1 element will remove 
+        console.log("Contact delete !!!")
+      }
+    }
+    console.log(addressBookArray.toString());
+}
+addressBookArray.delete("Varsha")
+
   
