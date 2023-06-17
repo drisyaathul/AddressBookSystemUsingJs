@@ -154,14 +154,20 @@ console.log(addressBookArray.toString());
 addressBookArray.delete=function(name){
     for(let i =0;i<addressBookArray.length;i++){
       if(addressBookArray[i]._firstName==name){
-        console.log("Contact found!!!")
+        console.log("Contact Found!!!")
         addressBookArray.splice(i,1); 
         /// 1 is use to specify how much element you want to remove if 1 then 1 element will remove 
-        console.log("Contact delete !!!")
+        console.log("Contact Deleted !!!")
       }
     }
     console.log(addressBookArray.toString());
 }
 addressBookArray.delete("Varsha")
+
+//UC6:Reduce Function to get Count
+const count = addressBookArray.reduce((count, contacts) => {
+    return count += 1;
+},0);
+console.log("Number of Contacts :" +count);
 
   
